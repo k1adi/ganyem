@@ -1,0 +1,19 @@
+app-footer{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: $primary;
+
+  & > p{
+    font-size: 1.15rem;
+    margin-bottom: .5rem;
+  }
+
+  .footer{
+    &__link{
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,4 +1,6 @@
-import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
+import 'regenerator-runtime'; /* for async await transpile */
 
-console.log('Hello Coders! :)');
+import './components/app-navbar';
+import './components/app-banner';
+import './components/app-footer';

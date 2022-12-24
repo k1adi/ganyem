@@ -9,11 +9,6 @@ module.exports = {
     app: path.resolve(__dirname, 'src/scripts/app.js'),
     // sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',

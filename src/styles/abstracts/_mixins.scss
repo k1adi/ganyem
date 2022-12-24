@@ -1,0 +1,56 @@
+// Mixin Breakpoint Screen Max
+// Mobile first rules (max-width)
+@mixin breakpoint-screen-min($size){
+  @media (min-width: map-get($grid-break, $size)){
+    @content;
+  }
+}
+
+// Mixin Transition
+// https://www.w3schools.com/css/css3_transitions.asp
+@mixin transition($duration, $prop: 'all', $timing: 'ease-in-out'){
+  $compatible: 'transition', '-o-transition', '-moz-transition', '-webkit-transition';
+  @each $browser in $compatible{
+    #{$browser}: #{$prop} $duration #{$timing};
+  }
+}
+
+// Mixin Transform
+// https://www.w3schools.com/cssref/css3_pr_transform.asp
+@mixin transform($prop, $value) {
+  $compatible: 'transform', '-o-transform', '-moz-transform', '-webkit-transform';
+  @each $browser in $compatible{
+    #{$browser}: #{$prop}(#{$value});
+  }
+}
+
+// Mixin Box Shadow
+// https://www.cssmatic.com/box-shadow
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color){
+  $compatible: 'box-shadow', '-moz-box-shadow', '-webkit-box-shadow';
+  @each $browser in $compatible{
+    #{$browser}: #{$horizontal} #{$vertical} #{$blur} #{$spread} #{$color};
+  }
+}
+
+// Mixin Animate
+// https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+@mixin animate($name, $duration, $direction, $count){
+  $compatible: 'animation', '-o-animation', '-moz-animation', '-webkit-animation';
+  @each $browser in $compatible{
+    #{$browser}: #{$name} #{$duration} #{$direction} #{$count};
+  }
+}
+
+// Create linear gradient
+// https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
+@mixin linear-gradient($direction, $gradients){
+  $compatible: 'linear-gradient', '-moz-linear-gradient', '-webkit-linear-gradient';
+  @each $browser in $compatible{
+    background: #{$browser}(#{$direction}, #{$gradients});
+  }
+}
+
+@mixin color-theme($background, $title, $text){
+
+}

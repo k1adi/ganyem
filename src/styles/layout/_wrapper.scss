@@ -1,0 +1,19 @@
+%wrapper{
+  display: block;
+  position: relative;
+  height: auto;
+}
+
+.wrapper{
+  &--full{
+    @extend %wrapper;
+    width: 100%;
+  }
+
+  &--wrap{
+    @extend %wrapper;
+    width: 92%;
+    max-width: $max-width-wrapper;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,27 @@
+$primary: #FFCC1D !default;
+$secondary: #0B4619 !default;
+$tertier: #116530 !default;
+
+$light: #f7f7f7!default;
+$light-muted: #f1f1f1 !default;
+$dark: #202124 !default;
+$dark-muted: #292a2c !default;
+
+$text-light: #EFF0F1 !default;
+$text-dark: #202124 !default;
+
+$font-size-base: 18px;
+$font-fammily-base: 'Rubik', sans-serif !default;
+$font-family-heading: 'Chewy', cursive !default;
+
+$width-wrapper: 92% !default;
+$max-width-wrapper: 1440px !important;
+
+// Grid Breakpoints{
+$grid-break: (
+  'xs': 576px,
+  'sm': 768px,
+  'md': 992px,
+  'lg': 1200px,
+  'xl': 1400px
+);
