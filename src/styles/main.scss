@@ -1,12 +1,12 @@
 @import
  'abstracts/variables',
  'abstracts/mixins',
- 'abstracts/placeholders',
- 'abstracts/accessibility';
+ 'abstracts/placeholders';
 
 @import
  'base/general',
- 'base/typography';
+ 'base/typography',
+ 'base/accessibility';
 
 @import
  'components/banner',

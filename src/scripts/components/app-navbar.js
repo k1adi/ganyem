@@ -55,6 +55,7 @@ class AppNavbar extends HTMLElement{
       navToggle.classList.add('active');
       navToggle.setAttribute('aria-expanded', true);
       toggleLabel.innerText = 'Close Navigation';
+      navList.classList.add('active');
       showNavItem();
     };
 
@@ -63,6 +64,7 @@ class AppNavbar extends HTMLElement{
       navToggle.classList.remove('active');
       navToggle.setAttribute('aria-expanded', false);
       toggleLabel.innerText = 'Show Navigation';
+      navList.classList.remove('active');
       removeNavItem();
     };
 

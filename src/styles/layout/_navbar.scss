@@ -108,15 +108,14 @@
         top: 86px;
         left: 0;
         z-index: -1;
-        background-color: rgba($color: white, $alpha: .4);
+        background-color: rgba($color: white, $alpha: .6);
       }
     }
 
     &__item{
-      padding: 0 1rem;
       & > a{
         display: block;
-        padding: 1.5rem 0;
+        padding: 1.5rem 1rem;
         font-weight: 500;
         color: $dark;
         border-bottom: solid 3px transparent;
@@ -137,6 +136,7 @@
 
       &__item{
         display: inline;
+        padding: 0 1rem;
         & > a{
           display: inline-block;
           padding: 1rem 0;
