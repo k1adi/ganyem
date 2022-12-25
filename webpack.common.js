@@ -28,7 +28,9 @@ module.exports = {
       cache: true,
       inject: true,
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style-[contenthash].css',
+    }),
   ],
   module: {
     rules: [
