@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
@@ -13,14 +12,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/images/'),
-          to: path.resolve(__dirname, 'dist/assets/images'),
-        },
-      ],
     }),
     new FaviconsWebpackPlugin({
       logo: './src/images/favicon.png',
@@ -43,7 +34,7 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
     ],

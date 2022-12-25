@@ -7,7 +7,6 @@
     "test-lint": "eslint --ext .js ./src",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "serve": "webpack serve --config webpack.dev.js",
     "test": "karma start"
   },
   "keywords": [],
