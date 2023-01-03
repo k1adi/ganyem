@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chewy&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light">
     <header class="header">
         <a id="skip-to-content" href="#main">Skip to Main Content</a>
         <app-navbar class="wrapper--wrap"></app-navbar>
@@ -16,6 +16,19 @@
 
     <main>
         <app-banner data-title="Find Any Foods or Restaurants at Ganyem" data-cta="true" data-cta-text="Find Resto" class="banner banner--home"></app-banner>
+        <section class="wrapper--wrap wrapper--padding-y" aria-label="List Restaurant">
+            <h2 class="text--title text--align-center">Find The Best Resto</h2>
+            <card-resto class="card-wrapper--resto"></card-resto>
+        </section>
+        <section class="wrapper--full wrapper--padding-y bg--primary">
+            <section class="wrapper--wrap">
+                <h2 class="text--title text--dark">How To Order</h2>                
+            </section>
+        </section>
+
+        <section class="wrapper--wrap wrapper--padding-y">
+            <h2 class="text--title text--align-center">Customer Review's</h2>
+        </section>
     </main>
 
     <footer>
