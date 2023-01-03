@@ -1,4 +1,5 @@
 import navLogo from '../../images/ganyem-logo.png';
+import iconTheme from '../../images/circle-half.svg';
 
 class AppNavbar extends HTMLElement{
   connectedCallback(){
@@ -22,10 +23,15 @@ class AppNavbar extends HTMLElement{
     }).join('');
 
     /**
-     * Render navigation element with mobile-first 
+     * Render navigation element with mobile-first
+     * Show toggle switch theme
      * Show nav-logo, nav-toggle and nav-list-wrapper witthout child
      */
     this.innerHTML = `
+      <button class="toggle-theme" aria-pressed="false">
+        <img class="toggle-theme__icon" src="${iconTheme}" alt="">
+        <span class="toggle-theme__text">Toggle High Contrast</span>
+      </button>
       <nav class="nav">
         <a href="/" class="nav__logo">
           <img src="${navLogo}" class="nav__logo--mobile" alt="Ganyem">
@@ -46,9 +52,11 @@ class AppNavbar extends HTMLElement{
     `;
 
     // Select global element
+    const body = document.querySelector('body');
     const navList = this.querySelector('.nav__list');
     const navToggle = this.querySelector('.nav__toggle');
     const toggleLabel = this.querySelector('#toggleLabel');
+    const toggleTheme = this.querySelector('.toggle-theme');
 
     // Show mobile navigation
     const showNavigation = () => {
@@ -108,30 +116,45 @@ class AppNavbar extends HTMLElement{
       });
     };
 
-    // Add 'click' event listener to nav-toggle
-    navToggle.addEventListener('click', function() {
-      const isActive = this.classList.contains('active');
-
-      // Check toggle active
-      if(!isActive){
-        showNavigation();
-        activeTrap();
-      } else {
-        closeNavigation();
-      }
-    });
-
     // Add resize event listener to window
     window.addEventListener('resize', () => {
       // When window screen is bigger than 768px
       if(window.screen.width > 768){
-        // Check if nav-list has child
+        // Check if nav-list haven't child
         if(!navList.hasChildNodes()){
           showNavItem();
         }
       } else {
         closeNavigation();
       } 
+    });
+
+    // Add 'click' event listener to toggle-theme
+    toggleTheme.addEventListener('click', function(){
+      const bodyTheme = body.getAttribute('class');
+
+      if(bodyTheme === 'light'){
+        body.setAttribute('class', 'dark');
+        this.setAttribute('aria-pressed', true);
+        localStorage.setItem('ganyem-theme', 'dark');
+      } else {
+        body.setAttribute('class', 'light');
+        this.setAttribute('aria-pressed', false);
+        localStorage.setItem('ganyem-theme', 'light');
+      }
+    });
+
+    // Add 'click' event listener to nav-toggle
+    navToggle.addEventListener('click', function() {
+      const isActive = this.classList.contains('active');
+
+      // Check toggle active
+      if(isActive){
+        closeNavigation();
+      } else {
+        showNavigation();
+        activeTrap();
+      }
     });
   }
 }

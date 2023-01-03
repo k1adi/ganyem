@@ -51,6 +51,13 @@
   }
 }
 
-@mixin color-theme($background, $title, $text){
-
+@mixin color-theme($bg-color, $bg-muted, $nav-border, $txt-title, $txt-base, $txt-muted, $icon-theme, $box-shadow){
+  --bg-color: #{$bg-color};
+  --bg-muted: #{$bg-muted};
+  --nav-border: #{$nav-border};
+  --txt-title: #{$txt-title};
+  --txt-base: #{$txt-base};
+  --txt-muted: #{$txt-muted};
+  --icon-theme: #{$icon-theme};
+  --box-shadow: #{$box-shadow};
 }

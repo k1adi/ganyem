@@ -25,3 +25,58 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+.toggle-theme{
+  padding: 0.65rem; 
+  position: fixed;
+  top: 50%;
+  right: 0;
+  border: solid 2px var(--txt-base);
+  border-radius: .5rem 0 0 .5rem;
+  background: var(--bg-muted);
+  @include transform('translateY', '-50%');
+
+  &:hover &__text,
+  &:focus &__text{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__icon{
+    width: 1.35rem;
+    height: auto;
+    vertical-align: middle;
+    cursor: pointer;
+    filter: var(--icon-theme);
+  }
+
+  &__text{
+    position: absolute;
+    top: 9%;
+    font-weight: 500;
+    color: var(--txt-base);
+    font-family: $font-fammily-base;
+    right: 3rem;
+    display: block;
+    font-size: .85rem;
+    white-space: nowrap;
+    background-color: var(--bg-muted);
+    border: solid 2px var(--txt-base);
+    padding: .5rem .75rem;
+    border-radius: .3rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include breakpoint-screen-min('sm'){
+    &__icon{
+      width: 1.65rem;
+    }
+
+    &__text{
+      top: 13%;
+      right: 3.25rem;
+      font-size: 1rem;
+    }
+  }
+}

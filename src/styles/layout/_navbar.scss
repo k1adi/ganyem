@@ -5,8 +5,9 @@
   left: 0;
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: var(--bg-color);
   z-index: 5;
+  @include box-shadow('0px', '5px', '15px', '0px', var(--box-shadow));
 }
 
 .nav{
@@ -17,7 +18,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  padding: .5rem 0;
+  padding: 1rem 0 .65rem;
 
   &__logo{
     & > img{
@@ -42,7 +43,7 @@
       position: absolute;
       height: 3px;
       width: 100%;
-      background-color: #505050;
+      background-color: var(--txt-base);
       border-radius: .5rem;
       opacity: 1;
       left: 0;
@@ -97,27 +98,32 @@
     padding: 0;
     list-style-type: none;
     width: 100%;
-    background-color: $light;
+    background-color: var(--bg-muted);
+    z-index: 6;
 
     &.active{
       &::before{
-        content: '';
+        content: ' ';
         width: 100%;
-        height: calc(100vh - 86px);
-        position: fixed;
-        top: 86px;
+        height: calc(100vh - 210px);
+        position: absolute;
+        top: 210px;
         left: 0;
-        z-index: -1;
-        background-color: rgba($color: white, $alpha: .6);
+        z-index: -1 !important;
+        background-color: rgba($color: $light, $alpha: .6);
       }
     }
 
     &__item{
+      &:not(:last-child){
+        border-bottom: solid 1px var(--nav-border);
+      }
+
       & > a{
         display: block;
         padding: 1.5rem 1rem;
         font-weight: 500;
-        color: $dark;
+        color: var(--txt-base);
         border-bottom: solid 3px transparent;
 
         &:hover,
@@ -137,6 +143,10 @@
       &__item{
         display: inline;
         padding: 0 1rem;
+        
+        &:not(:last-child){
+          border-bottom: none;
+        }
         & > a{
           display: inline-block;
           padding: 1rem 0;
