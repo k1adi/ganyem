@@ -11,3 +11,34 @@ p{
 a {
   text-decoration: none;
 }
+
+.text{
+  &--dark{
+    color: $dark !important;
+  }
+
+  &--light{
+    color: $light !important;
+  }
+
+  &--muted{
+    color: var(--txt-muted) !important;
+  }
+
+  &--align-center{
+    text-align: center;
+  }
+  
+  &--title{
+    font-size: 1.875rem;
+    letter-spacing: .2rem;
+    color: var(--txt-title);
+    font-family: $font-family-heading;
+  }
+
+  @include breakpoint-screen-min('sm'){
+    &--title{
+      font-size: 2.5rem;
+    }
+  }
+}

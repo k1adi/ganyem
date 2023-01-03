@@ -17,16 +17,33 @@ html{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   font-family: $font-fammily-base;
+
+  @include breakpoint-screen-min('sm'){
+    font-size: $font-size-base;
+  }
 }
 
 body{
+  &.light{
+    @include color-theme($light-theme...);
+  }
+
+  &.dark{
+    @include color-theme($dark-theme...);
+  }
   padding: 0;
   margin: 0;
-  background-color: $light;
+  background-color: var(--bg-color);
 }
 
 main{
   margin-top: 86px;
+}
+
+.bg{
+  &--primary{
+    background-color: $primary;
+  }
 }
