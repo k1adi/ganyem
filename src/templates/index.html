@@ -9,28 +9,66 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chewy&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body class="light">
+    <!-- Navbar -->
     <header class="header">
         <a id="skip-to-content" href="#main">Skip to Main Content</a>
         <app-navbar class="wrapper--wrap"></app-navbar>
     </header>
 
-    <main>
+    <!-- Main content -->
+    <main id="main">
+        <!-- Banner -->
         <app-banner data-title="Find Any Foods or Restaurants at Ganyem" data-cta="true" data-cta-text="Find Resto" class="banner banner--home"></app-banner>
-        <section class="wrapper--wrap wrapper--padding-y" aria-label="List Restaurant">
+        <!-- List Resto -->
+        <section class="wrapper--wrap wrapper--padding-y" aria-label="List Restaurant" id="resto">
+            <!-- Title section -->
             <h2 class="text--title text--align-center">Find The Best Resto</h2>
+            <!-- Resto wrapper -->
             <card-resto class="card-wrapper--resto"></card-resto>
         </section>
+
+        <!-- How to Order -->
         <section class="wrapper--full wrapper--padding-y bg--primary">
             <section class="wrapper--wrap">
+                <!-- Title section -->
                 <h2 class="text--title text--dark">How To Order</h2>                
+                <!-- Content wrapper -->
+                <ol class="card-wrapper--order">
+                    <li class="card--order">
+                        <span class="card--order__label">1</span>
+                        <img src="./../images/store.svg" alt="" class="card--order__icon">
+                        <h3 class="card--order__title">Find resto</h3>
+                        <p class="card--order__desc">Choose nearest restaurant to you or choose the best rating restaurant in town</p>
+                    </li>
+                    <li class="card--order">
+                        <span class="card--order__label">2</span>
+                        <img src="./../images/select.svg" alt="" class="card--order__icon">
+                        <h3 class="card--order__title">Select menu</h3>
+                        <p class="card--order__desc">Select the food or drink menu you want from the restaurant that you have chosen before</p>
+                    </li>
+                    <li class="card--order">
+                        <span class="card--order__label">3</span>
+                        <img src="./../images/checkout.svg" alt="" class="card--order__icon">
+                        <h3 class="card--order__title">Checkout Order</h3>
+                        <p class="card--order__desc">Pay for the order you have chosen by cash and non-cash to be ready processing</p>
+                    </li>
+                    <li class="card--order">
+                        <span class="card--order__label">4</span>
+                        <img src="./../images/clock.svg" alt="" class="card--order__icon">
+                        <h3 class="card--order__title">Wait for Serve</h3>
+                        <p class="card--order__desc">So from here the resto ready to prepare your menu for delivery or self-pickup</p>
+                    </li>
+                </ol>
             </section>
         </section>
 
+        <!-- Reviews -->
         <section class="wrapper--wrap wrapper--padding-y">
             <h2 class="text--title text--align-center">Customer Review's</h2>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <app-footer></app-footer>
     </footer>
