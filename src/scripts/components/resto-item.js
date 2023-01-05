@@ -11,7 +11,7 @@ class restoItem extends HTMLElement{
     this.innerHTML = `
       <div class="card--resto__image">
         <img class="spinner" alt="">
-        <span class="card--resto__label" aria-label="Location resto at">${this._data.city}</span>
+        <span class="card--resto__label" aria-label="Location resto at ${this._data.city}">${this._data.city}</span>
       </div>
       <div class="card--resto__body">
         <small class="card--resto__rating">
@@ -20,7 +20,9 @@ class restoItem extends HTMLElement{
         </small>
         <h3 class="card--resto__title">${this._data.name}</h3>
         <p class="text--muted">${this._data.description.substring(0, 120)}</p>
-        <a href="#" class="card__link" aria-label="See Resto ${this._data.name}">See Resto</a>
+        <div class="card__link">
+          <a href="#" aria-label="See Resto ${this._data.name}">See Resto</a>
+        </div>
       </div>
     `;
 

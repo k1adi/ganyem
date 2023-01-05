@@ -1,18 +1,17 @@
-$primary: #ffc814f5 !default;
-$secondary: #0B4619 !default;
-$tertier: #116530 !default;
+$primary: #FFCC1D !default;
+$secondary: #116530 !default;
 $placeholder-background: rgb(121, 121, 121) !default;
 $placeholder-animation: 'rgba(202, 202, 202' !default;
 
 $light: #f7f7f7 !default;
-$light-muted: #f1f1f1 !default;
+$light-muted: #dfdfdf !default;
 $txt-light-muted: #818991 !default;
 $nav-light: #d6d6d6 !default;
 $icon-light: invert(9%) sepia(1%) saturate(4983%) hue-rotate(188deg) brightness(104%) contrast(91%) !default;
 $box-shadow-light: rgba(128, 128, 128, 0.2) !default;
 
 $dark: #202124 !default;
-$dark-muted: #343536 !default;
+$dark-muted: #515253 !default;
 $nav-dark: #9775067e !default;
 $txt-dark-muted: #c0c5ca !default;
 $icon-dark: invert(95%) sepia(8%) saturate(23%) hue-rotate(169deg) brightness(101%) contrast(93%) !default;
@@ -22,6 +21,7 @@ $text-light: #EFF0F1 !default;
 $text-dark: $dark !default;
 
 $light-theme: $light, $light-muted, $nav-light, $text-dark, $text-dark, $txt-light-muted, $icon-light, $box-shadow-light;
+
 $dark-theme: $dark, $dark-muted, $nav-dark, $primary, $text-light, $txt-dark-muted, $icon-dark, $box-shadow-dark;
 
 $font-size-base: 18px;

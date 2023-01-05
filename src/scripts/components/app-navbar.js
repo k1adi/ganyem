@@ -60,6 +60,7 @@ class AppNavbar extends HTMLElement{
 
     // Show mobile navigation
     const showNavigation = () => {
+      removeNavItem();
       navToggle.classList.add('active');
       navToggle.setAttribute('aria-expanded', true);
       toggleLabel.innerText = 'Close Navigation';
@@ -148,7 +149,7 @@ class AppNavbar extends HTMLElement{
     navToggle.addEventListener('click', function() {
       const isActive = this.classList.contains('active');
 
-      // Check toggle active
+      // Check toggle is active
       if(isActive){
         closeNavigation();
       } else {
