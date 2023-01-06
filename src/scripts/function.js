@@ -1,6 +1,6 @@
 const checkStorage = () => {
   if(typeof (Storage) === 'undefined'){
-    alert('Browser tidak mendukung local stroage');
+    alert('Browser does not support local storage');
     return false;
   }
 

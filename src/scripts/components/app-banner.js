@@ -1,5 +1,6 @@
 class AppBanner extends HTMLElement{
   connectedCallback(){
+    // Get data-* atttribute
     this.bannerTitle = this.getAttribute('data-title');
     this.ctaStatus = this.getAttribute('data-cta');
     this.ctaText = this.getAttribute('data-cta-text');
@@ -8,6 +9,7 @@ class AppBanner extends HTMLElement{
   }
 
   render(){
+    // Render banner
     this.innerHTML=`
       <div class="wrapper--wrap">
         <h1 class="banner__title">${this.bannerTitle}</h1>

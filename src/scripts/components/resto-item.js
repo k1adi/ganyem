@@ -1,3 +1,4 @@
+// Import star-icon and broken-image
 import star from '../../images/star.svg';
 import brokenImage from '../../images/broken-image.jpg';
 
@@ -21,27 +22,27 @@ class restoItem extends HTMLElement{
         <h3 class="card--resto__title">${this._data.name}</h3>
         <p class="card--resto__desc">${this._data.description.substring(0, 120)}</p>
         <div class="card__link">
-          <a href="#" aria-label="See Resto ${this._data.name}">See Resto</a>
+          <a href="#" aria-label="See ${this._data.name} Resto">See Resto</a>
         </div>
       </div>
     `;
-
+    // Set Image() constructor and select element resto-img
     const downloadImage = new Image();
     const cardImage = this.querySelector('.card--resto__image img');
-
+    // Update image-src
     const updateImage = (imageSrc) => {
       cardImage.setAttribute('src', imageSrc);
       cardImage.removeAttribute('class');
     };
-
+    // If image-src successfully loaded
     downloadImage.onload = function() {
       updateImage(this.src);
     };
-
+    // If image-src faile loaded
     downloadImage.onerror = function() {
       updateImage(brokenImage);
     };
-
+    // Set image.src properties
     downloadImage.src = this._data.pictureId;
   }
 }

@@ -3,7 +3,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: auto;
   background-color: var(--bg-color);
   z-index: 5;
@@ -97,7 +97,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    width: 100%;
+    width: 100vw;
     background-color: var(--bg-muted);
     z-index: 6;
 

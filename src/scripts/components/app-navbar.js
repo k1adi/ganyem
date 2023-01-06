@@ -60,11 +60,13 @@ class AppNavbar extends HTMLElement{
 
     // Show mobile navigation
     const showNavigation = () => {
+      // Clean nav-list from nav-item first
       removeNavItem();
       navToggle.classList.add('active');
       navToggle.setAttribute('aria-expanded', true);
       toggleLabel.innerText = 'Close Navigation';
       navList.classList.add('active');
+      // Show nav-item 
       showNavItem();
     };
 
@@ -91,24 +93,26 @@ class AppNavbar extends HTMLElement{
 
     // Active trap focus
     const activeTrap = () => {
+      // Select all focusable element, first focusable element and last focusable element
       const focusableElem = navList.querySelectorAll('[href]:not([disabled])');
       const firstFocusableElem = navToggle;
       const lastFocusableElem = focusableElem[focusableElem.length - 1];
 
       document.addEventListener('keydown', (e) => {
+        // Set tabkey
         const tabKey = e.key === 'Tab';
-
+        // If key pressed not 'Tab' key
         if(!tabKey){
           return;
         }
-
+        // Function to guide next focus
         const checkActiveElement = (elementActivated, nextElement) => {
           if(document.activeElement === elementActivated){
             nextElement.focus();
             e.preventDefault();
           }
         };
-
+        // If key pressed together with 'Shift' key
         if(e.shiftKey){
           checkActiveElement(firstFocusableElem, lastFocusableElem);
         } else {
@@ -126,6 +130,7 @@ class AppNavbar extends HTMLElement{
           showNavItem();
         }
       } else {
+        // Close navigation when windows was resized
         closeNavigation();
       } 
     });
@@ -133,7 +138,7 @@ class AppNavbar extends HTMLElement{
     // Add 'click' event listener to toggle-theme
     toggleTheme.addEventListener('click', function(){
       const bodyTheme = body.getAttribute('class');
-
+      // Check current theme from body, then update attribute and save to localStorage
       if(bodyTheme === 'light'){
         body.setAttribute('class', 'dark');
         this.setAttribute('aria-pressed', true);
@@ -148,8 +153,7 @@ class AppNavbar extends HTMLElement{
     // Add 'click' event listener to nav-toggle
     navToggle.addEventListener('click', function() {
       const isActive = this.classList.contains('active');
-
-      // Check toggle is active
+      // Check if toggle is active
       if(isActive){
         closeNavigation();
       } else {

@@ -1,12 +1,15 @@
+// Import image star icon
 import star from '../../images/star.svg';
 
 class AppReview extends HTMLElement{
+  // Set data review
   set review(review){
     this._review = review.reviews;
     this.render();
   }
 
   render(){
+    // Render swiper wrapper and swiper navigation
     this.innerHTML = `
       <div class="swiper" id="swiper-review">
         <div class="swiper-wrapper"></div> 
@@ -16,14 +19,15 @@ class AppReview extends HTMLElement{
         <div class="swiper-button-next"></div>
       </div>
     `;
-
+    // Select swiper wrapper
     const swiperWrapper = this.querySelector('.swiper-wrapper');
+    // Loop data review for swiper-slides
     this._review.forEach(data => {
       swiperWrapper.insertAdjacentHTML('beforeend', `
         <div class="swiper-slide">
           <div class="swiper--review">
             <div class="swiper--review__resto">
-              <a href="#">${data.restaurant}</a>
+              <a href="#" aria-label="${data.restaurant} review">${data.restaurant}</a>
               <small class="card--resto__rating">
                 <img src="${star}" alt="Rating">
                 ${data.rating}
