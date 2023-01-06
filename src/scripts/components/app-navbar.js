@@ -29,7 +29,7 @@ class AppNavbar extends HTMLElement{
      */
     this.innerHTML = `
       <button class="toggle-theme" aria-pressed="false">
-        <img class="toggle-theme__icon" src="${iconTheme}" alt="">
+        <img class="toggle-theme__icon" src="${iconTheme}" alt="Theme">
         <span class="toggle-theme__text">Toggle High Contrast</span>
       </button>
       <nav class="nav">

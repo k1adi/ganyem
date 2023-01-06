@@ -35,7 +35,7 @@ class AppReview extends HTMLElement{
             </div>
             <p class="swiper--review__text">${data.review}</p>
             <div class="swiper--review__profile">
-              <img src="${data.profilePicture}" alt="">
+              <img src="${data.profilePicture}" alt="Profile picture">
               <p>${data.name}</p>
             </div>
           </div>

@@ -11,7 +11,7 @@ class restoItem extends HTMLElement{
   render(){
     this.innerHTML = `
       <div class="card--resto__image">
-        <img class="spinner" alt="">
+        <img class="spinner" alt="Spinner loader">
         <span class="card--resto__label" aria-label="Location resto at ${this._data.city}">${this._data.city}</span>
       </div>
       <div class="card--resto__body">
@@ -32,6 +32,7 @@ class restoItem extends HTMLElement{
     // Update image-src
     const updateImage = (imageSrc) => {
       cardImage.setAttribute('src', imageSrc);
+      cardImage.setAttribute('alt', 'Thumbnail resto');
       cardImage.removeAttribute('class');
     };
     // If image-src successfully loaded
