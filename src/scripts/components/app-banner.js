@@ -14,7 +14,7 @@ class AppBanner extends HTMLElement{
       <div class="wrapper--wrap">
         <h1 class="banner__title">${this.bannerTitle}</h1>
         ${this.ctaStatus ? `
-          <a class="banner__button" href="#resto">${this.ctaText}</a>
+          <a class="banner__button" href="#main">${this.ctaText}</a>
         ` : ''}
       </div>
     `;
