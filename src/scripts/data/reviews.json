@@ -1,8 +1,32 @@
 {
 	"reviews": [
 		{
-			"name": "",
-			"review": ""
+			"name": "John Doe",
+			"review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+			"profilePicture": "https://cdn-icons-png.flaticon.com/512/847/847969.png",
+			"restaurant": "1. Bring Your Phone Cafe",
+			"rating": 4.5
+		},
+		{
+			"name": "Taylor Simora",
+			"review": "Pellentesque tristique elit non diam convallis, vel rhoncus mauris pharetra. Duis vitae maximus lectus.",
+			"profilePicture": "https://cdn-icons-png.flaticon.com/512/847/847969.png",
+			"restaurant": "2. Run The Gun",
+			"rating": 4.7
+		},
+		{
+			"name": "Daniel Kevin",
+			"review": "Sed fermentum faucibus justo, in aliquam sem commodo sit amet. In porta sem a est sodales aliquam.",
+			"profilePicture": "https://cdn-icons-png.flaticon.com/512/847/847969.png",
+			"restaurant": "3. Pangsit Express",
+			"rating": 4.2
+		},
+		{
+			"name": "Robert Grant",
+			"review": "Sed velit mauris, ornare vitae convallis eget, finibus sit amet libero. Donec vel massa.",
+			"profilePicture": "https://cdn-icons-png.flaticon.com/512/847/847969.png",
+			"restaurant": "4. Ducky Duck",
+			"rating": 4
 		}
 	]
 }

@@ -1,7 +1,6 @@
 @import
  'abstracts/variables',
- 'abstracts/mixins',
- 'abstracts/placeholders';
+ 'abstracts/mixins';
 
 @import
  'base/general',
@@ -12,7 +11,7 @@
  'components/banner',
  'components/card',
  'components/button',
- 'components/loader';
+ 'components/swiper';
 
 @import
  'layout/navbar',
