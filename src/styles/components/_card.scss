@@ -64,14 +64,22 @@
       margin-bottom: .5rem;
     }
 
+    &__desc{
+      color: var(--txt-muted);
+      margin-bottom: 0;
+    }
+
     &__rating{
-      display: block;
+      display: flex;
+      align-content: center;
+      gap: .25rem;
       padding-bottom: .25rem;
       color: var(--txt-base);
+      font-weight: 500;
 
       & > img{
         width: auto;
-        height: .85rem;
+        height: .9rem;
       }
     }
   }

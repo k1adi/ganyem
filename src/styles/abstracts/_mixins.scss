@@ -17,10 +17,10 @@
 
 // Mixin Transform
 // https://www.w3schools.com/cssref/css3_pr_transform.asp
-@mixin transform($prop, $value) {
+@mixin transform($value) {
   $compatible: 'transform', '-o-transform', '-moz-transform', '-webkit-transform';
   @each $browser in $compatible{
-    #{$browser}: #{$prop}(#{$value});
+    #{$browser}: #{$value};
   }
 }
 

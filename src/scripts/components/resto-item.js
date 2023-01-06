@@ -19,7 +19,7 @@ class restoItem extends HTMLElement{
           ${this._data.rating}
         </small>
         <h3 class="card--resto__title">${this._data.name}</h3>
-        <p class="text--muted">${this._data.description.substring(0, 120)}</p>
+        <p class="card--resto__desc">${this._data.description.substring(0, 120)}</p>
         <div class="card__link">
           <a href="#" aria-label="See Resto ${this._data.name}">See Resto</a>
         </div>

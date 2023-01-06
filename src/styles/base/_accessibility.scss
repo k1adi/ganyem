@@ -34,7 +34,7 @@
   border: solid 2px var(--txt-base);
   border-radius: .5rem 0 0 .5rem;
   background: var(--bg-muted);
-  @include transform('translateY', '-50%');
+  @include transform('translateY(-50%)');
 
   &:hover &__text,
   &:focus &__text{
