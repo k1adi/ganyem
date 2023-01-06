@@ -38,10 +38,12 @@ class AppNavbar extends HTMLElement{
         </a>
 
         <button class="nav__toggle" aria-expanded="false" aria-haspopup="true" aria-describedby="Open Navigation" aria-controls="navList">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="nav__toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <span class="visual-hidden" id="toggleLabel">Show Navigation</span>
         </button>
 
@@ -54,7 +56,7 @@ class AppNavbar extends HTMLElement{
     // Select global element
     const body = document.querySelector('body');
     const navList = this.querySelector('.nav__list');
-    const navToggle = this.querySelector('.nav__toggle');
+    const navToggle = this.querySelector('.nav__toggle-btn');
     const toggleLabel = this.querySelector('#toggleLabel');
     const toggleTheme = this.querySelector('.toggle-theme');
 
