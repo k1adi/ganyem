@@ -126,7 +126,7 @@ class AppNavbar extends HTMLElement{
     // Add resize event listener to window
     window.addEventListener('resize', () => {
       // When window screen is bigger than 768px
-      if(window.screen.width > 768){
+      if(window.screen.width > 767){
         // Check if nav-list haven't child
         if(!navList.hasChildNodes()){
           showNavItem();
