@@ -37,7 +37,7 @@ class AppNavbar extends HTMLElement{
           <img src="${navLogo}" class="nav__logo--mobile" alt="Ganyem">
         </a>
 
-        <button class="nav__toggle" aria-expanded="false" aria-haspopup="true" aria-describedby="Open Navigation" aria-controls="navList">
+        <button class="nav__toggle" aria-expanded="false" aria-haspopup="true" aria-describedby="Open Navigation" aria-controls="navList" ${widthScreen > 767 ? 'tabindex="-1"' : ''}>
           <div class="nav__toggle-btn">
             <span></span>
             <span></span>
@@ -48,7 +48,7 @@ class AppNavbar extends HTMLElement{
         </button>
 
         <ul class="nav__list" id="navList">
-          ${widthScreen > 768 ? listItem : ''}
+          ${widthScreen > 767 ? listItem : ''}
         </ul>
       </nav>
     `;
@@ -56,7 +56,8 @@ class AppNavbar extends HTMLElement{
     // Select global element
     const body = document.querySelector('body');
     const navList = this.querySelector('.nav__list');
-    const navToggle = this.querySelector('.nav__toggle-btn');
+    const navToggle = this.querySelector('.nav__toggle');
+    const navToggleBtn = this.querySelector('.nav__toggle-btn');
     const toggleLabel = this.querySelector('#toggleLabel');
     const toggleTheme = this.querySelector('.toggle-theme');
 
@@ -64,7 +65,7 @@ class AppNavbar extends HTMLElement{
     const showNavigation = () => {
       // Clean nav-list from nav-item first
       removeNavItem();
-      navToggle.classList.add('active');
+      navToggleBtn.classList.add('active');
       navToggle.setAttribute('aria-expanded', true);
       toggleLabel.innerText = 'Close Navigation';
       navList.classList.add('active');
@@ -74,7 +75,7 @@ class AppNavbar extends HTMLElement{
 
     // Close mobile navigation
     const closeNavigation = () => {
-      navToggle.classList.remove('active');
+      navToggleBtn.classList.remove('active');
       navToggle.setAttribute('aria-expanded', false);
       toggleLabel.innerText = 'Show Navigation';
       navList.classList.remove('active');
@@ -127,6 +128,7 @@ class AppNavbar extends HTMLElement{
     window.addEventListener('resize', () => {
       // When window screen is bigger than 768px
       if(window.screen.width > 767){
+        navToggle.setAttribute('tabindex', '-1');
         // Check if nav-list haven't child
         if(!navList.hasChildNodes()){
           showNavItem();
@@ -134,6 +136,7 @@ class AppNavbar extends HTMLElement{
       } else {
         // Close navigation when windows was resized
         closeNavigation();
+        navToggle.removeAttribute('tabindex');
       } 
     });
 
@@ -154,7 +157,7 @@ class AppNavbar extends HTMLElement{
 
     // Add 'click' event listener to nav-toggle
     navToggle.addEventListener('click', function() {
-      const isActive = this.classList.contains('active');
+      const isActive = navToggleBtn.classList.contains('active');
       // Check if toggle is active
       if(isActive){
         closeNavigation();
